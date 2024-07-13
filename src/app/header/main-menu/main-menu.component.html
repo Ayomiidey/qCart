@@ -1,0 +1,7 @@
+<div
+  class="pt-4 p-2 text-[#36454f] font-roboto font-normal text-base w-[70%] text-center"
+>
+  <a class="m-2" *ngFor="let menu of mainMenu" [routerLink]="menu.link">{{
+    menu.label
+  }}</a>
+</div>

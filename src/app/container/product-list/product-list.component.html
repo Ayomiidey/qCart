@@ -1,0 +1,38 @@
+<!-- <div
+  class="flex flex-wrap h-full my-20 mx-10 px-10 justify-center align-items-center"
+></div> -->
+<div class="my-[20px] mt-[40px] mx-auto text-center">
+  <input
+    [(ngModel)]="searchTerm"
+    (ngModelChange)="filterProducts()"
+    placeholder="Search"
+    class="w-[40%] h-[5.5vh] py-[1px] px-[10px] rounded-[2px] bg-[#efefef] border-solid border-2 border-[#282828]"
+  />
+  <button class="py-[12px] px-[30px] bg-[#282828] ml-[-5px] text-[#fff]">
+    Search
+  </button>
+</div>
+
+<div class="container mx-auto px-4">
+  <h1 class="text-2xl font-bold my-4">Product List</h1>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div
+      *ngFor="let product of filteredProducts"
+      class="border rounded-lg shadow-lg p-4"
+    >
+      <img
+        [src]="product.images"
+        alt="{{ product.title }}"
+        class="w-full h-48 object-cover rounded-t-lg"
+      />
+      <div class="p-4">
+        <h2 class="text-xl font-semibold mb-2">{{ product.title }}</h2>
+        <p class="text-gray-700 mb-4">{{ product.description }}</p>
+        <div class="text-lg font-bold mb-4">$ {{ product.price }}</div>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
