@@ -11,6 +11,7 @@ export class ProductListComponent implements OnInit {
   products: Products[] = [];
   filteredProducts: Products[] = [];
   searchTerm: string = '';
+  sortOrder: string = ' ';
 
   constructor(private productService: ProductService) {}
 
@@ -44,4 +45,19 @@ export class ProductListComponent implements OnInit {
   //     products.title.toLowerCase().includes(searchTerm)
   //   );
   // }
+
+  onSortChange(event: Event): void {
+    const sortValue = (event.target as HTMLSelectElement).value;
+    this.sortProducts(sortValue);
+  }
+
+  sortProducts(sortValue: string) {
+    this.sortOrder = sortValue;
+
+    if (this.sortOrder === 'priceLowHigh') {
+      this.filteredProducts.sort((a, b) => a.price - b.price);
+    } else if (this.sortOrder === 'priceHighLow') {
+      this.filteredProducts.sort((a, b) => b.price - a.price);
+    }
+  }
 }
