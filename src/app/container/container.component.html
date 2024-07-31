@@ -1,4 +1,7 @@
 <!-- <app-header></app-header>
 <app-search></app-search> -->
-
-<product-list></product-list>
+<app-search
+  (search)="onSearch($event)"
+  (sort)="sortProducts($event)"
+></app-search>
+<product-list *ngIf="products" [listResult]="products"></product-list>

@@ -12,7 +12,7 @@ import { TopMenuComponent } from './header/top-menu/top-menu.component';
 import { ContainerComponent } from './container/container.component';
 import { ProductListComponent } from './container/product-list/product-list.component';
 import { SearchComponent } from './container/search/search.component';
-import { ProductService } from './services/product-service.service';
+import { ProductService } from './services/product.service';
 import {
   HttpClientModule,
   provideHttpClient,

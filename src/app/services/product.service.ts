@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Products } from '../models/products';
+import { Product } from '../models/product';
 import { map } from 'rxjs';
 
 @Injectable({
@@ -12,12 +12,13 @@ export class ProductService {
 
   constructor(private http: HttpClient) {}
 
-  getProducts(): Observable<Products[]> {
-    return this.http
-      .get<{ products: Products[] }>(this.apiUrl)
-      .pipe(map((response) => response.products));
+  // getProducts(): Observable<Product[]> {
+  //   return this.http.get<Product[]>(this.apiUrl);
+  // }
 
-    // getProducts(): Observable<Products[]> {
-    //   return this.http.get<Products[]>(this.apiUrl);
+  getProducts(): Observable<Product[]> {
+    return this.http
+      .get<{ products: Product[] }>(this.apiUrl)
+      .pipe(map((response) => response.products));
   }
 }

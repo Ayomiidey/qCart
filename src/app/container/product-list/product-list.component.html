@@ -1,30 +1,11 @@
 <!-- <div
   class="flex flex-wrap h-full my-20 mx-10 px-10 justify-center align-items-center"
 ></div> -->
-<div class="my-[20px] mt-[40px] mx-auto text-center">
-  <input
-    [(ngModel)]="searchTerm"
-    (ngModelChange)="filterProducts()"
-    placeholder="Search"
-    class="w-[40%] h-[5.5vh] py-[1px] px-[10px] rounded-[2px] bg-[#efefef] border-solid border-2 border-[#282828]"
-  />
-  <button class="py-[12px] px-[30px] bg-[#282828] ml-[-5px] text-[#fff]">
-    Search
-  </button>
-
-  <div class="flex space-x-2 mt-4">
-    <label for="sortOrder" class="mr-2">Sort by Price:</label>
-    <select (change)="onSortChange($event)" class="border p-2 rounded">
-      <option value="priceLowHigh">Price: Low to High</option>
-      <option value="priceHighLow">Price: High to Low</option>
-    </select>
-  </div>
-</div>
 
 <div class="mx-auto px-4">
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     <div
-      *ngFor="let product of filteredProducts"
+      *ngFor="let product of listResult"
       class="border rounded-lg shadow-lg p-4"
     >
       <img
@@ -34,7 +15,7 @@
       />
       <div class="p-4">
         <h2 class="text-xl font-semibold mb-2">{{ product.title }}</h2>
-        <p class="text-gray-700 mb-4">{{ product.description }}</p>
+        <p class="text-gray-700 mb-4 h-24">{{ product.description }}</p>
         <div class="text-lg font-bold mb-4">$ {{ product.price }}</div>
         <button class="bg-blue-500 text-white px-4 py-2 rounded">
           Add to Cart
@@ -43,3 +24,28 @@
     </div>
   </div>
 </div>
+
+<!-- <div class="mx-auto px-4">
+  <div class="flex flex-wrap mx-2">
+    <div
+      *ngFor="let product of listResult"
+      class="border rounded-lg shadow-lg p-4 w-full md:w-1/2 lg:w-1/3 px-2 mb-4"
+    >
+      <img
+        [src]="product.images"
+        alt="{{ product.title }}"
+        class="w-full h-48 object-cover rounded-t-lg"
+      />
+      <div class="p-4 mb-4">
+        <div class="p-1">
+          <h2 class="text-xl font-semibold mb-2">{{ product.title }}</h2>
+          <p class="text-gray-700">{{ product.description }}</p>
+        </div>
+        <div class="text-lg font-bold mb-4">$ {{ product.price }}</div>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
