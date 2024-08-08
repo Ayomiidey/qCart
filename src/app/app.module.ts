@@ -18,6 +18,7 @@ import {
   provideHttpClient,
   withFetch,
 } from '@angular/common/http';
+import { ProductDetailComponent } from './container/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {
     ContainerComponent,
     ProductListComponent,
     SearchComponent,
+    ProductDetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
