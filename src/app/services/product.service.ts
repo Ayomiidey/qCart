@@ -22,11 +22,11 @@ export class ProductService {
       .pipe(map((response) => response.products));
   }
 
-  // getProductById(id: number): Observable<Product> {
-  //   return this.getProducts().pipe(
-  //     map((products: Product[]) =>
-  //       products.find((product) => product.id === id)
-  //     )
-  //   );
-  // }
+  getProductById(id: number): Observable<Product | undefined> {
+    return this.getProducts().pipe(
+      map((products: Product[]) =>
+        products.find((product) => product.id === id)
+      )
+    );
+  }
 }
