@@ -9,7 +9,7 @@ export class MainMenuComponent {
   mainMenu = [
     { label: 'Home', link: '' },
     { label: 'Products', link: '' },
-    { label: 'About', link: '' },
-    { label: 'Cart', link: '' },
+    { label: 'About', link: '/about' },
+    { label: 'Cart', link: '/cart' },
   ];
 }
