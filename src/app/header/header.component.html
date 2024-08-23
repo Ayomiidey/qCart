@@ -1,4 +1,4 @@
-<div class="w-full h-auto flex flex-wrap border-2 border-[#ece9e5]">
+<!-- <div class="w-full h-auto flex flex-wrap border-2 border-[#ece9e5]">
   <div
     class="px-8 py-4 text-3xl font-bold text-[#36454f] font-concert-one flex-shrink-0 w-full sm:w-1/5"
     routerLink="/"
@@ -11,7 +11,104 @@
       <main-menu></main-menu>
     </div>
   </div>
-</div>
+</div> -->
+
+<!-- <header class="bg-white">
+  <nav class="flex justify-between items-center w-[92%] mx-auto">
+    <div class="flex items-center">
+      <img
+        class="w-20"
+        src="https://t3.ftcdn.net/jpg/00/98/13/58/240_F_98135870_crUa6k8AMtLdO4ATiVmlKwny4durDubg.jpg"
+      />
+      <span class="text-2xl font-bold">QCart</span>
+    </div>
+
+    <div
+      [ngClass]="{ 'top-[60px]': isMenuOpen, 'top-[100%]': !isMenuOpen }"
+      class="md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5 duration-500"
+    >
+      <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+        <li>
+          <a class="hover:text-gray-500" href="">Home</a>
+        </li>
+        <li>
+          <a class="hover:text-gray-500" href="">Products</a>
+        </li>
+        <li>
+          <a class="hover:text-gray-500" href="">About</a>
+        </li>
+        <li>
+          <a class="hover:text-gray-500" href="">Cart</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="flex items-center gap-6">
+      <button
+        class="bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]"
+      >
+        Sign in
+      </button>
+
+      <i
+        [ngClass]="isMenuOpen ? 'fa-times' : 'fa-bars'"
+        class="fa fa-bars fa-2x cursor-pointer md:hidden"
+        aria-hidden="true"
+        (click)="toggleMenu()"
+      ></i>
+    </div>
+  </nav>
+</header> -->
+
+<header class="bg-white">
+  <nav class="flex justify-between items-center w-[92%] mx-auto">
+    <div class="flex items-center">
+      <img
+        class="w-20"
+        src="https://t3.ftcdn.net/jpg/00/98/13/58/240_F_98135870_crUa6k8AMtLdO4ATiVmlKwny4durDubg.jpg"
+      />
+      <span class="text-2xl font-bold">QCart</span>
+    </div>
+
+    <div
+      [ngClass]="{
+        'top-[9%]': isMenuOpen,
+        'top-[-100%]': !isMenuOpen
+      }"
+      class="md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5 duration-500"
+    >
+      <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+        <li>
+          <a class="hover:text-gray-500" href="">Home</a>
+        </li>
+        <li>
+          <a class="hover:text-gray-500" href="">Products</a>
+        </li>
+        <li>
+          <a class="hover:text-gray-500" href="">About</a>
+        </li>
+        <li>
+          <a class="hover:text-gray-500" href="">Cart</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="flex items-center gap-6">
+      <button
+        class="bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]"
+      >
+        Sign in
+      </button>
+
+      <i
+        [ngClass]="isMenuOpen ? 'fa-times' : 'fa-bars'"
+        class="fa fa-bars fa-2x cursor-pointer md:hidden"
+        aria-hidden="true"
+        (click)="toggleMenu()"
+      ></i>
+    </div>
+  </nav>
+</header>
 
 <!-- <div
   class="w-[100%] h-auto flex flex-wrap border-solid border-2 border-[#ece9e5]"
